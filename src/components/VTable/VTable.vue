@@ -1,21 +1,14 @@
 <template>
-    <div>
-    
-    </div>
+  <div></div>
 </template>
 <script>
-export default {    
-    name: "VTable",
-    data(){
-        return{
-
-        };
-    },
-    methods: {
-
-    }
-}
+export default {
+  name: "VTable",
+  data() {
+    return {};
+  },
+  methods: {},
+};
 </script>
 <style>
-    
 </style>
