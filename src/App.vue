@@ -1,68 +1,61 @@
 <template>
   <v-app>
-    <v-app-bar app color="purple" dark elevation="12" fixed>
-      <div class="d-flex align-center">
-        <h1>Bem vindo</h1>
-      </div>
+    <v-app-bar app color="deep-purple" dark elevation="20">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-md-none">
+      </v-app-bar-nav-icon>
+      <v-toolbar-title>Welcome</v-toolbar-title>
+
+      <v-spacer></v-spacer>
     </v-app-bar>
-
-    <v-main>
-      <v-container justify="center">
-        <div class="d-flex flex-column align-center justify-center">
-          <v-btn class="my-4" color="green" elevation="22" large dark>Novo Usuário</v-btn>
-          <v-simple-table
-    fixed-header
-    height="300px"
-  >
-    <template v-slot:default>
-      <thead>
-        <tr>
-          <th>
-            Avatar
-          </th>
-          <th>
-            Nome
-          </th>
-          <th>
-            Idade
-          </th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="item in usuarios"
-          :key="item.nome"
+    <v-navigation-drawer v-model="drawer" absolute bottom temporary >
+      <v-list nav dense>
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
         >
-          <td>{{ item.avatar }}</td>
-          <td>{{ item.nome }}</td>
-          <td>{{ item.idade }}</td>
-        </tr>
-      </tbody>
-    </template>
-  </v-simple-table>
-        </div>
-      </v-container>
-    </v-main>
+          <v-list-item>
+            <v-btn text>Novo Usuário</v-btn>
+          </v-list-item>
 
-    <v-footer app color="purple" dark>
-      
-    </v-footer>
+          <v-list-item>
+            <v-btn text>Bar</v-btn>
+          </v-list-item>
+
+          <v-list-item>
+            <v-btn text>Fizz</v-btn>
+          </v-list-item>
+
+          <v-list-item>
+            <v-btn text>Buzz</v-btn>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+    <v-main>
+      <VTable />
+    </v-main>
+    <v-footer app color="deep-purple" dark> </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
+import VTable from "@/components/VTable/VTable.vue";
 export default {
   name: "App",
 
   components: {
-    HelloWorld,
+    VTable,
   },
 
   data: () => ({
-    //
+    drawer: false,
+    group: null,
   }),
+
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
 };
 </script>
