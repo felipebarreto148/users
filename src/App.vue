@@ -7,7 +7,7 @@
 
       <v-spacer></v-spacer>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute left temporary >
+    <v-navigation-drawer v-model="drawer" absolute left temporary dark>
       <v-list >
         <v-list-item-group
           v-model="group"
@@ -17,7 +17,7 @@
             <v-btn text>Início</v-btn>
           </v-list-item>
           <v-list-item>
-            <v-btn text>Novo Usuário</v-btn>
+            <v-btn class="green--text" text>Novo Usuário</v-btn>
           </v-list-item>
         </v-list-item-group>
       </v-list>
