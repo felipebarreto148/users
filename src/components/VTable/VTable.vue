@@ -22,8 +22,8 @@
               </v-btn>
             </td>
             <td>
-              <v-btn color="red" fab small dark>
-                <v-icon>mdi-cancel</v-icon>
+              <v-btn color="red" pill small dark>
+                <v-icon>mdi-delete</v-icon>
               </v-btn>
             </td>
           </tr>
