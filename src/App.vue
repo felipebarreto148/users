@@ -14,16 +14,16 @@
           active-class="deep-purple--text text--accent-4"
         >
           <v-list-item>
-            <v-btn text>Início</v-btn>
+            <v-btn to="/" text>Início</v-btn>
           </v-list-item>
           <v-list-item>
-            <v-btn class="green--text" text>Novo Usuário</v-btn>
+            <v-btn to="/adicionar" class="green--text" text>Novo Usuário</v-btn>
           </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-    <v-main>
-      <VTable />
+    <v-main >
+      <router-view></router-view>
     </v-main>
     <v-footer app color="deep-purple darken-4" dark> </v-footer>
   </v-app>

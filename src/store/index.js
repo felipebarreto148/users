@@ -2,8 +2,8 @@ import actions from './actions';
 import state from './state';
 import mutations from './mutations';
 
-export{
-    actions,
-    state,
-    mutations
+export {
+  actions,
+  state,
+  mutations,
 };
