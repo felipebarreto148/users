@@ -9,7 +9,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-sm-none">
       </v-app-bar-nav-icon>
-      <v-toolbar-title>Welcome</v-toolbar-title>
+      <v-toolbar-title><strong>Users</strong></v-toolbar-title>
 
       <v-spacer></v-spacer>
     </v-app-bar>
@@ -29,9 +29,18 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <router-view></router-view>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
     </v-main>
-    <v-footer app color="deep-purple darken-4" dark> </v-footer>
+    <v-footer app color="deep-purple darken-4" dark > 
+       <v-col
+        class="py-4 text-center white--text"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>by Felipe Barreto</strong>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
