@@ -9,6 +9,11 @@ const routes = [
     name: 'consulta',
     component: () => import('@/components/VTable/VTable.vue'),
   },
+  {
+   path: '/adicionar',
+   name: 'Cadastrar',
+   component: () => import('@/components/FormCadastro/VFormCadastro.vue'), 
+  },
 ];
 
 const router = new VueRouter({

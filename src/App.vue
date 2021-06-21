@@ -9,7 +9,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-sm-none">
       </v-app-bar-nav-icon>
-      <v-toolbar-title><strong>Users</strong></v-toolbar-title>
+      <v-toolbar-title><strong>Bem vindo</strong></v-toolbar-title>
 
       <v-spacer></v-spacer>
     </v-app-bar>

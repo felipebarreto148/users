@@ -16,12 +16,12 @@
             <td>{{ item.name }}</td>
             <td>{{ item.idade }}</td>
             <td>
-              <v-btn color="primary" elevation="5" fab x-small>
+              <v-btn color="primary" elevation="5" fab x-small to="editar">
                 <v-icon>mdi-pencil</v-icon>
               </v-btn>
             </td>
             <td>
-              <v-btn fab x-small>
+              <v-btn fab x-small @click="deletar(index)">
                 <v-icon color="red">mdi-delete</v-icon>
               </v-btn>
             </td>
@@ -37,7 +37,7 @@ export default {
     return {
       champions: [
         {
-          name: "ahri",
+          name: "Ahri",
           idade: 18,
         },
         {
@@ -80,8 +80,8 @@ export default {
     };
   },
   methods: {
-    teste(){
-      console.log('testado')
+    deletar(indice){
+      this.champions.splice(indice, 1)
     }
   },
 };
