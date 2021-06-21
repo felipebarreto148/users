@@ -6,8 +6,9 @@
             <th class="text-left">#</th>
             <th class="text-left">Name</th>
             <th class="text-left">Idade</th>
-            <th></th>
-            <th></th>
+            <th class="text-left"></th>
+            <th class="text-left"></th>
+            <th class="text-left"></th>
           </tr>
         </thead>
         <tbody>
@@ -15,6 +16,11 @@
             <td >{{ index + 1 }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.idade }}</td>
+            <td>
+              <v-btn fab x-small>
+                <v-icon color="green">mdi-information</v-icon>
+              </v-btn>
+            </td>
             <td>
               <v-btn color="primary" elevation="5" fab x-small to="editar">
                 <v-icon>mdi-pencil</v-icon>

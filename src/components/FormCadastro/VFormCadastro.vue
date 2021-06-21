@@ -9,7 +9,7 @@
         required
       ></v-text-field>
       <v-text-field
-        v-model="name"
+        v-model="idade"
         :counter="3"
         label="Idade"
         required
@@ -20,6 +20,12 @@
 <script>
 export default {
   name: "FormCadastro",
+  data(){
+    return{
+      name: "",
+      idade: ""
+    }
+  }
 };
 </script>
 <style lang="">
