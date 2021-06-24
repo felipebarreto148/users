@@ -26,7 +26,7 @@
         rows="1"
       ></v-textarea>
       <v-row>
-        <v-btn color="success" width="40%" class="ma-4" @click="novoUsuario">
+        <v-btn color="success" width="40%" class="ma-4" @click="editarUsuario">
           Editar
         </v-btn>
         <v-btn color="warning" width="40%" class="ma-4" @click="limparCampos">
@@ -37,27 +37,25 @@
   </v-container>
 </template>
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: "FormEditar",
   computed: {
-    nome() {
-      return this.$store.getters.getUsuario.nome;
-    },
-    idade() {
-      return this.$store.getters.getUsuario.idade;
-    },
-    sobre() {
-      return this.$store.getters.getUsuario.sobre;
-    },
+    ...mapState({
+      nome: (state) => state.usuarios[state.indiceParaEdicao].nome,
+      idade: (state) => state.usuarios[state.indiceParaEdicao].idade,
+      sobre: (state) => state.usuarios[state.indiceParaEdicao].sobre,
+    }),
   },
   methods: {
     editarUsuario() {
       let usuario = {
-        nome: this.nome(),
-        idade: this.idade(),
-        sobre: this.sobre(),
+        nome: this.nome,
+        idade: this.idade,
+        sobre: this.sobre,
       };
-      this.$store.dispatch("novoUsuario", usuario);
+      this.$store.dispatch("editarUsuario", usuario);
       this.limparCampos();
     },
     limparCampos() {
@@ -68,5 +66,3 @@ export default {
   },
 };
 </script>
-<style lang="">
-</style>

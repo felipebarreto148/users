@@ -22,8 +22,8 @@
               </v-btn>
             </td>
             <td>
-              <v-btn color="primary" elevation="5" fab x-small to="editar" @click="inserirIndice(index)">
-                <v-icon>mdi-pencil</v-icon>
+              <v-btn fab x-small @click="inserirIndice(index)">
+                <v-icon color="primary">mdi-pencil</v-icon>
               </v-btn>
             </td>
             <td>
@@ -37,6 +37,7 @@
     </v-simple-table>
 </template>
 <script>
+import router from '@/router';
 export default {
   name: "VTable",
   data() {
@@ -49,7 +50,9 @@ export default {
       this.$store.dispatch('removerUsuario', indice);
     },
     inserirIndice(indice){
+      console.log(indice);
       this.$store.dispatch('inserirIndice', indice);
+      router.push('/editar')
     },
   },
 };

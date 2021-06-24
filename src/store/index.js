@@ -44,6 +44,7 @@ export default new Vuex.Store({
         },
 
         inserirIndice({ commit }, payload){
+            commit('removerIndice');
             commit('inserirIndice', payload);
         },
         removerIndice({ commit }){
