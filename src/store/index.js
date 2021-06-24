@@ -6,6 +6,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         usuarios: [],
+
+        indiceParaEdicao: "",
+    },
+    getters: {
+        getUsuario: state => {
+            return state.usuarios[state.indiceParaEdicao]
+        }
     },
     mutations: {
         inserir(state, payload){
@@ -14,6 +21,16 @@ export default new Vuex.Store({
         remover(state, payload){
             state.usuarios.splice(payload, 1);
         },
+        editar(state, payload){
+            state.usuarios.splice(state.indiceParaEdicao, 1, payload);
+        },
+
+        inserirIndice(state, payload){
+            state.indiceParaEdicao = payload;
+        },
+        removerIndice(state){
+            state.indiceParaEdicao = "";
+        },
     },
     actions: {
         novoUsuario({ commit }, payload){
@@ -21,6 +38,16 @@ export default new Vuex.Store({
         },
         removerUsuario({ commit }, payload){
             commit('remover', payload)        
+        },
+        editarUsuario({ commit }, payload){
+            commit('editar', payload)        
+        },
+
+        inserirIndice({ commit }, payload){
+            commit('inserirIndice', payload);
+        },
+        removerIndice({ commit }){
+            commit('removerIndice');
         }
     },
 });

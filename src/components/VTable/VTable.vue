@@ -22,7 +22,7 @@
               </v-btn>
             </td>
             <td>
-              <v-btn color="primary" elevation="5" fab x-small to="editar">
+              <v-btn color="primary" elevation="5" fab x-small to="editar" @click="inserirIndice(index)">
                 <v-icon>mdi-pencil</v-icon>
               </v-btn>
             </td>
@@ -47,7 +47,10 @@ export default {
   methods: {
     deletar(indice){
       this.$store.dispatch('removerUsuario', indice);
-    }
+    },
+    inserirIndice(indice){
+      this.$store.dispatch('inserirIndice', indice);
+    },
   },
 };
 </script>

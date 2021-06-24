@@ -1,18 +1,5 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      class="d-flex align-center"
-      color="deep-purple darken-4"
-      dark
-      elevation="20"
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-sm-none">
-      </v-app-bar-nav-icon>
-      <v-toolbar-title><strong>Bem vindo</strong></v-toolbar-title>
-
-      <v-spacer></v-spacer>
-    </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute left temporary dark>
       <v-list>
         <v-list-item-group
@@ -28,16 +15,29 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
+    <v-app-bar
+      app
+      class="d-flex align-center"
+      color="deep-purple darken-4"
+      dark
+      elevation="20"
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-sm-none">
+      </v-app-bar-nav-icon>
+      
+        <v-toolbar-title class="d-flex justify-center">
+          <strong>Bem vindo</strong>
+        </v-toolbar-title>
+
+      <v-spacer></v-spacer>
+    </v-app-bar>
     <v-main>
       <v-container>
         <router-view></router-view>
       </v-container>
     </v-main>
-    <v-footer app color="deep-purple darken-4" dark > 
-       <v-col
-        class="py-4 text-center white--text"
-        cols="12"
-      >
+    <v-footer app color="deep-purple darken-4" dark>
+      <v-col class="py-4 text-center white--text" cols="12">
         {{ new Date().getFullYear() }} — <strong>by Felipe Barreto</strong>
       </v-col>
     </v-footer>

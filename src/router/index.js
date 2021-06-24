@@ -14,11 +14,11 @@ const routes = [
    name: 'Cadastrar',
    component: () => import('@/components/FormCadastro/VFormCadastro.vue'), 
   },
-  /* {
+  {
     path: '/editar',
     name: 'Editar',
     component: () => import('@/components/FormEditar/VFormEditar.vue'), 
-  }, */
+  },
 ];
 
 const router = new VueRouter({
