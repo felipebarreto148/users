@@ -12,9 +12,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in champions" :key="item.name">
+          <tr v-for="(item, index) in usuarios" :key="index">
             <td >{{ index + 1 }}</td>
-            <td>{{ item.name }}</td>
+            <td>{{ item.nome }}</td>
             <td>{{ item.idade }}</td>
             <td>
               <v-btn fab x-small>
@@ -41,53 +41,12 @@ export default {
   name: "VTable",
   data() {
     return {
-      champions: [
-        {
-          name: "Ahri",
-          idade: 18,
-        },
-        {
-          name: "Qyiana",
-          idade: 18,
-        },
-        {
-          name: "Irelia",
-          idade: 18,
-        },
-        {
-          name: "Orn",
-          idade: 18,
-        },
-        {
-          name: "Yasuo",
-          idade: 18,
-        },
-        {
-          name: "Aphelios",
-          idade: 18,
-        },
-        {
-          name: "Akali",
-          idade: 18,
-        },
-        {
-          name: "Soraka",
-          idade: 18,
-        },
-        {
-          name: "Braum",
-          idade: 18,
-        },
-        {
-          name: "Rakan",
-          idade: 18,
-        },
-      ],
+      usuarios: this.$store.state.usuarios,
     };
   },
   methods: {
     deletar(indice){
-      this.champions.splice(indice, 1)
+      this.$store.dispatch('removerUsuario', indice);
     }
   },
 };
