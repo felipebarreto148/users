@@ -50,7 +50,6 @@ export default {
       this.$store.dispatch('removerUsuario', indice);
     },
     inserirIndice(indice){
-      console.log(indice);
       this.$store.dispatch('inserirIndice', indice);
       router.push('/editar')
     },

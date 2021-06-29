@@ -20,7 +20,7 @@
         v-model="sobre"
         :counter="200"
         color="deep-purple"
-        label="Sobre"
+        label="Sobre" 
         required
         auto-grow
         rows="1"
@@ -37,16 +37,15 @@
   </v-container>
 </template>
 <script>
-import { mapState } from 'vuex';
-
+import router from '@/router';
 export default {
   name: "FormEditar",
-  computed: {
-    ...mapState({
-      nome: (state) => state.usuarios[state.indiceParaEdicao].nome,
-      idade: (state) => state.usuarios[state.indiceParaEdicao].idade,
-      sobre: (state) => state.usuarios[state.indiceParaEdicao].sobre,
-    }),
+  data(){
+    return {
+      nome: this.$store.state.usuarios[this.$store.state.indiceParaEdicao].nome,
+      idade: this.$store.state.usuarios[this.$store.state.indiceParaEdicao].idade,
+      sobre: this.$store.state.usuarios[this.$store.state.indiceParaEdicao].sobre,
+    };
   },
   methods: {
     editarUsuario() {
@@ -56,7 +55,7 @@ export default {
         sobre: this.sobre,
       };
       this.$store.dispatch("editarUsuario", usuario);
-      this.limparCampos();
+      router.push('/')
     },
     limparCampos() {
       this.nome = "";
