@@ -12,13 +12,18 @@ const routes = [
   {
    path: '/adicionar',
    name: 'Cadastrar',
-   component: () => import('@/components/FormCadastro/VFormCadastro.vue'), 
+   component: () => import('@/components/pages/FormCadastro/VFormCadastro.vue'), 
   },
   {
     path: '/editar',
     name: 'Editar',
-    component: () => import('@/components/FormEditar/VFormEditar.vue'), 
+    component: () => import('@/components/pages/FormEditar/VFormEditar.vue'), 
   },
+  {
+    path: '/detalhes',
+    name: 'Detalhes',
+    component: () => import('@/components/pages/PageDetalhes/VPageDetalhes.vue'),
+  }
 ];
 
 const router = new VueRouter({

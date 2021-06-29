@@ -17,7 +17,7 @@
             <td>{{ item.nome }}</td>
             <td>{{ item.idade }}</td>
             <td>
-              <v-btn fab x-small>
+              <v-btn fab x-small to="/detalhes">
                 <v-icon color="green">mdi-information</v-icon>
               </v-btn>
             </td>

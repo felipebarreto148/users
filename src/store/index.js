@@ -9,11 +9,6 @@ export default new Vuex.Store({
 
         indiceParaEdicao: "",
     },
-    getters: {
-        getUsuario: state => {
-            return state.usuarios[state.indiceParaEdicao]
-        }
-    },
     mutations: {
         inserir(state, payload){
             state.usuarios.push(payload);
