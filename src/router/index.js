@@ -11,17 +11,17 @@ const routes = [
   },
   {
    path: '/adicionar',
-   name: 'Cadastrar',
+   name: 'cadastrar',
    component: () => import('@/components/pages/FormCadastro/VFormCadastro.vue'), 
   },
   {
     path: '/editar',
-    name: 'Editar',
+    name: 'editar',
     component: () => import('@/components/pages/FormEditar/VFormEditar.vue'), 
   },
   {
     path: '/detalhes',
-    name: 'Detalhes',
+    name: 'detalhes',
     component: () => import('@/components/pages/PageDetalhes/VPageDetalhes.vue'),
   }
 ];

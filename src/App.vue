@@ -24,12 +24,10 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-sm-none">
       </v-app-bar-nav-icon>
-      
-        <v-toolbar-title class="d-flex justify-center">
-          <strong>Bem vindo</strong>
-        </v-toolbar-title>
+      <v-toolbar-title class="d-flex">
+        <strong>Bem vindo</strong>
+      </v-toolbar-title>
 
-      <v-spacer></v-spacer>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -46,11 +44,14 @@
 
 <script>
 import VTable from "@/components/VTable/VTable.vue";
+import BackHome from "@/components/Buttons/VBackHome.vue";
+
 export default {
   name: "App",
 
   components: {
     VTable,
+    BackHome,
   },
 
   data: () => ({

@@ -42,9 +42,9 @@ export default {
   name: "FormEditar",
   data(){
     return {
-      nome: this.$store.state.usuarios[this.$store.state.indiceParaEdicao].nome,
-      idade: this.$store.state.usuarios[this.$store.state.indiceParaEdicao].idade,
-      sobre: this.$store.state.usuarios[this.$store.state.indiceParaEdicao].sobre,
+      nome: this.$route.params.user.nome || "",
+      idade: this.$route.params.user.idade || "",
+      sobre: this.$route.params.user.sobre || "",
     };
   },
   methods: {
