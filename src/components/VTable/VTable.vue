@@ -17,7 +17,7 @@
           <td>{{ item.nome }}</td>
           <td>{{ item.idade }}</td>
           <td>
-            <v-btn fab x-small to="/detalhes">
+            <v-btn fab x-small @click="details(item)">
               <v-icon color="green">mdi-information</v-icon>
             </v-btn>
           </td>
@@ -56,6 +56,14 @@ export default {
           user
         }
       });
+    },
+    details(user){
+      router.push({
+        name: "detalhes",
+        params: {
+          user
+        }
+      })
     }
   }
 };
