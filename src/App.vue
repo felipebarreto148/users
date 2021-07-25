@@ -2,32 +2,24 @@
   <v-app>
     <v-navigation-drawer v-model="drawer" absolute left temporary dark>
       <v-list>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item>
-            <v-btn to="/" text>Início</v-btn>
-          </v-list-item>
+        <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
           <v-list-item>
             <v-btn to="/adicionar" class="green--text" text>Novo Usuário</v-btn>
           </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      app
-      class="d-flex align-center"
-      color="deep-purple darken-4"
-      dark
-      elevation="20"
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-sm-none">
-      </v-app-bar-nav-icon>
-      <v-toolbar-title class="d-flex">
+    <v-app-bar app color="deep-purple darken-4" dark elevation="20">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-sm-none"> </v-app-bar-nav-icon>
+      <v-toolbar-title>
         <strong>Bem vindo</strong>
       </v-toolbar-title>
-
+      <v-spacer></v-spacer>
+      <v-btn icon to="/">
+        <v-icon>
+          mdi-home
+        </v-icon>
+      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -51,18 +43,18 @@ export default {
 
   components: {
     VTable,
-    BackHome,
+    BackHome
   },
 
   data: () => ({
     drawer: false,
-    group: null,
+    group: null
   }),
 
   watch: {
     group() {
       this.drawer = false;
-    },
-  },
+    }
+  }
 };
 </script>
