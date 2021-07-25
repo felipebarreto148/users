@@ -20,6 +20,11 @@
           mdi-home
         </v-icon>
       </v-btn>
+      <v-btn icon color="green" to="adicionar">
+        <v-icon>
+          mdi-plus
+        </v-icon>
+      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
